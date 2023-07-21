@@ -1,72 +1,71 @@
 <!DOCTYPE html>
-<!-- 
-Código escrito por MTHS1901 em um tutorial no YouTube
-Confira: https://www.youtube.com/watch?v=zxxB9SFh9p4
-Este arquivo já esta pronto e você pode mandar para quem quiser
--->
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namora comigo?</title>
-</head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
+        a {
+            text-decoration: none;
+        }
+
+        .box {
+            font-size: 20px;
+            color: white;
+            height: 250px;
+            width: 350px;
+            border-radius: 10px;
+            background: #191919;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+            width: 150px;
+        }
+
+        button {
+            height: 30px;
+            width: 50px;
+            background: white;
+            color: black;
+            font-weight: 600;
+            border-radius: 5px;
+            border: 2px solid black;
+        }
+    </style>
+    <title>Pedido Irrecusável</title>
+</head>
 <body>
-    <div id="conteudo">
-        <h2>Aceita namorar comigo?</h2>
-        <div style="margin: auto;width: 170px;">
-            <button style="position: fixed;display: block;" class="btn" onclick="sim()">SIM</button>
-            <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)" style="position: absolute;">NÃO</button>
+    <div class="box">
+        <p>Namora Comigo?🥺❤️</p>
+        <div class="buttons-container">
+            <button><a href="https://inglesparaviajar.com.br/100-frases-metadinha-para-bio-do-instagramem-ingles-com-traducao/">Sim</a></button>
+            <button id="no">Não</button>
         </div>
     </div>
 </body>
-<style>
-    #conteudo {
-        background-image: url(https://telegra.ph/file/19698d531bbbb03f92fe7.jpg);
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 10px;
-        text-align: center;
-        font-family: sans-serif;
-    }
-
-    .btn {
-        background: black;
-        color: green;
-        border: none;
-        padding: 10px;
-        width: 80px;
-        border-radius: 5px;
-    }
-</style>
-
 <script>
-    function sim() {
-        alert("Você aceitou namorar comigo! Eu te amo:)");
-        // redireciona para um URL após clicar no SIM
-        location.href = "https://youtu.be/jnwmn1R9t8g";
-    }
+    let button = document.getElementById('no');
+    let height = window.innerHeight - 50;
+    let width = window.innerWidth - 50;
 
-    function desvia(btn) {
-        // btn declarado na função
-        btn.style.position = 'absolute';
-        btn.style.bottom = geraPosicao(10, 90);
-        btn.style.left = geraPosicao(10, 90);
-        console.log('opa, desviei...');
-    }
-
-    function geraPosicao(min, max) {
-        return (Math.random() * (max - min) + min) + "%";
-    }
-
-
-    const o = "MTHS1901", e = 90, l = "bold"; console.log(`%c${o}`, "font-size: 90px; font-weight: bold; background: linear-gradient(90deg, red, yellow);"), console.log("Tutorial: https://www.youtube.com/watch?v=zxxB9SFh9p4");
-
+    button.addEventListener('mouseover', function () {
+        button.style.position = "absolute"
+        button.style.top = Math.random() * height + "px";
+        button.style.left = Math.random() * width + "px";
+    })
 </script>
-
 </html>
